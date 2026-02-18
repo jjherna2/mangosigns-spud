@@ -7,19 +7,16 @@
   <script src="https://25livepub.collegenet.com/scripts/spuds.js"></script>
 
   <style>
-    html, body {
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
       background: white;
-      overflow: hidden; /* Keep signage clean */
+      overflow: hidden;
     }
-
     #calendar-container {
-      height: 100vh;
       width: 100%;
-      overflow-y: auto;
+      height: 100%;
     }
   </style>
 </head>
@@ -33,22 +30,6 @@
       spudType: "main",
       spudContainer: "calendar-container"
     });
-
-    // Auto Scroll Script
-    let scrollSpeed = 1; // lower = slower
-    let scrollDelay = 30; // milliseconds
-
-    function autoScroll() {
-      const container = document.getElementById("calendar-container");
-
-      if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
-        container.scrollTop = 0; // reset to top
-      } else {
-        container.scrollTop += scrollSpeed;
-      }
-    }
-
-    setInterval(autoScroll, scrollDelay);
   </script>
 </body>
 </html>
