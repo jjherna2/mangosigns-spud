@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>25Live SPUD</title>
+
+  <script src="https://25livepub.collegenet.com/scripts/spuds.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: white;
+      overflow: hidden; /* Keep signage clean */
+    }
+
+    #calendar-container {
+      height: 100vh;
+      width: 100%;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="calendar-container"></div>
+
+  <script>
+    $Trumba.addSpud({
+      webName: "sections-wla-gsep",
+      spudType: "main",
+      spudContainer: "calendar-container"
+    });
+
+    // Auto Scroll Script
+    let scrollSpeed = 1; // lower = slower
+    let scrollDelay = 30; // milliseconds
+
+    function autoScroll() {
+      const container = document.getElementById("calendar-container");
+
+      if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
+        container.scrollTop = 0; // reset to top
+      } else {
+        container.scrollTop += scrollSpeed;
+      }
+    }
+
+    setInterval(autoScroll, scrollDelay);
+  </script>
+</body>
+</html>
